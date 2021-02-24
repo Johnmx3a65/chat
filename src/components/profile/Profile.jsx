@@ -4,7 +4,7 @@ import MyPosts from "./my_posts/MyPosts";
 
 const Profile = () => {
     return (
-        <div className={profile_css.content}>
+        <div>
             <div>
                 <img  src={'https://images.template.net/wp-content/uploads/2015/08/Extraordinary-Beach-Background-Free-Download.png'} alt={"profile_back_img"}/>
             </div>
