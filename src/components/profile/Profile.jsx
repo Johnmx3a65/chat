@@ -11,7 +11,7 @@ const Profile = () => {
             <div>
                 ava + description
             </div>
-            <MyPosts/>
+            <MyPosts message={"It's amazing!"}/>
         </div>
     );
 }
