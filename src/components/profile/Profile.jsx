@@ -1,16 +1,12 @@
 import React from "react";
-import profile_css from './Profile.module.css';
+import ProfileCss from './Profile.module.css';
 import MyPosts from "./my_posts/MyPosts";
+import ProfileInfo from "./profile_info/ProfileInfo";
 
 const Profile = () => {
     return (
         <div>
-            <div>
-                <img  src={'https://images.template.net/wp-content/uploads/2015/08/Extraordinary-Beach-Background-Free-Download.png'} alt={"profile_back_img"}/>
-            </div>
-            <div>
-                ava + description
-            </div>
+            <ProfileInfo/>
             <MyPosts message={"It's amazing!"}/>
         </div>
     );

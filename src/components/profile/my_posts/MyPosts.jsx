@@ -1,21 +1,19 @@
 import React from "react";
-import my_posts from './MyPosts.module.css';
+import MyPostsCss from './MyPosts.module.css'
 import Post from "./post/Post";
 
 const MyPosts = (props) => {
     return (
-        <div>
+        <div className={MyPostsCss.posts_block}>
             My posts
             <div>
                 <textarea/>
+                <br/>
                 <button>Add post</button>
                 <button>Remove</button>
             </div>
-            <div className={my_posts.posts}>
+            <div className={MyPostsCss.posts}>
                 <Post message={props.message}/>
-                <Post/>
-                <Post/>
-                <Post/>
             </div>
         </div>
     );
