@@ -1,8 +1,9 @@
 import React from "react";
+import profile_css from '../css/Profile.module.css';
 
 const Profile = () => {
     return (
-        <div className={'content'}>
+        <div className={profile_css.content}>
             <div>
                 <img  src={'https://images.template.net/wp-content/uploads/2015/08/Extraordinary-Beach-Background-Free-Download.png'} alt={"profile_back_img"}/>
             </div>
@@ -14,8 +15,10 @@ const Profile = () => {
                 <div>
                     New post
                 </div>
-                <div>
-                    post 1
+                <div className={'posts'}>
+                    <div className={profile_css.item}>
+                        post 1
+                    </div>
                 </div>
             </div>
         </div>

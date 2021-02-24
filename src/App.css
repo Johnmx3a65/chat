@@ -12,26 +12,3 @@
   grid-gap: 10px;
 }
 
-.header{
-  grid-area: header;
-  background-color: darkseagreen;
-}
-
-.header img{
-  width: 50px;
-}
-
-.nav{
-  grid-area: nav;
-  background-color: darkseagreen;
-}
-
-.content{
-  grid-area: content;
-  background-color: white;
-}
-
-.content img{
-  width: 658px;
-}
-

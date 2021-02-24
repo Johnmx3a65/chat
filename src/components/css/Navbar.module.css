@@ -1,0 +1,9 @@
+.nav{
+    grid-area: nav;
+    background-color: darkseagreen;
+}
+
+.item a{
+    color: white;
+    text-decoration: none;
+}
