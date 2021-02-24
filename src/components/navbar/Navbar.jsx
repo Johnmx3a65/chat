@@ -1,5 +1,5 @@
 import React from "react";
-import navbar_css from '../css/Navbar.module.css';
+import navbar_css from './Navbar.module.css';
 
 const Navbar = () => {
     return (
@@ -17,6 +17,7 @@ const Navbar = () => {
                 <a href={"/index.html"}>Music</a>
             </div>
             <div className={navbar_css.item}>
+                <br/>
                 <a href={"/index.html"}>Settings</a>
             </div>
         </nav>
