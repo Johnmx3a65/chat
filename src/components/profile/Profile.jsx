@@ -7,7 +7,7 @@ const Profile = () => {
     return (
         <div>
             <ProfileInfo/>
-            <MyPosts message={"It's amazing!"}/>
+            <MyPosts/>
         </div>
     );
 }

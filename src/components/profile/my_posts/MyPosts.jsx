@@ -3,6 +3,13 @@ import MyPostsCss from './MyPosts.module.css'
 import Post from "./post/Post";
 
 const MyPosts = (props) => {
+    const posts = [
+        {message : "It's amazing!"},
+        {message :  "You're so cool!"}
+    ]
+
+    const postsElements = posts.map(post => <Post message={post.message}/>);
+
     return (
         <div className={MyPostsCss.posts_block}>
             My posts
@@ -12,9 +19,7 @@ const MyPosts = (props) => {
                 <button>Add post</button>
                 <button>Remove</button>
             </div>
-            <div className={MyPostsCss.posts}>
-                <Post message={props.message}/>
-            </div>
+            <div className={MyPostsCss.posts}>{postsElements}</div>
         </div>
     );
 }
