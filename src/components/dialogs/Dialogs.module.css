@@ -1,21 +1,87 @@
-.dialogs{
+.dialogs {
     display: grid;
-
     grid-template-columns: 2fr 10fr;
+    grid-template-rows: minmax(500px, 700px);
 }
 
-.dialogs_items{
+.dialogs_items {
+    grid-column: 1;
+    border: 1px solid rgba(var(--b38,219,219,219),1);
     padding: 10px;
+    text-align: center;
 }
 
-.dialogs_items .active{
+.dialogs_items .active {
     color: gold;
 }
 
+
+
+.messageList{
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 12fr 1fr;
+    border: 1px solid rgba(var(--b38,219,219,219),1);
+    border-left: 0;
+}
+
+.collocutor{
+    text-align: center;
+    padding-top: 15px;
+    grid-column: 1;
+    grid-row: 1;
+    border: 1px none rgba(var(--b38, 219, 219, 219), 1);
+    border-bottom-style: solid;
+}
+
 .messages{
-    padding: 10px;
+    grid-column: 1;
+    grid-row: 2;
+    margin: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
-.messages .message{
+.messages .messageMine span{
+    color: #fff;
+    background-color: #007bff;
+    border-radius: .25rem;
+    font-size: 75%;
+    padding: .5em .5em;
+    margin: 10px 10px 10px 80%;
+    float: right;
+}
+
+.messages .messageOther span{
+    color: #fff;
+    background-color: #007bff;
+    border-radius: .25rem;
+    font-size: 75%;
+    padding: .5em .5em;
+    margin: 10px 80% 10px 10px;
+    float: left;
+}
+
+.messageArea{
+    grid-column: 1;
+    grid-row: 3;
+    display: inline-block;
+}
+
+.messageArea textarea{
+    border: 1px solid rgba(var(--b38,219,219,219),1);
+    border-radius: 22px;
+    margin: 0 5px 0 5px;
+    padding: 4px 9px;
+    line-height: 18px;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+}
+
+.messageArea button{
 
 }
+
+

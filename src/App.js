@@ -6,15 +6,21 @@ import Navbar from "./components/navbar/Navbar";
 import Profile from "./components/profile/Profile";
 import Dialogs from "./components/dialogs/Dialogs";
 
-const App = () => {
+
+const App = ({data}) => {
+    const {posts, dialogsData} = data;
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
-                    <Route path={'/dialogs'} component={Dialogs}/>
-                    <Route path={'/profile'} component={Profile}/>
+                    <Route path={'/dialogs'}>
+                        <Dialogs dialogsData={dialogsData}/>
+                    </Route>
+                    <Route path={'/profile'}>
+                        <Profile posts={posts}/>
+                    </Route>
                 </div>
             </div>
         </BrowserRouter>
