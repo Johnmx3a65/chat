@@ -1,12 +1,25 @@
-import React from "react";
-import DialogsCss from './../Dialogs.module.css'
+import React, {useState, useEffect} from "react";
+import './DialogItem.css'
 import {NavLink} from "react-router-dom";
 
 const DialogItem = ({dialog}) => {
-    const {username, id} = dialog;
+
+    const [username, setUsername] = useState(dialog.username);
+    const [id, setId] = useState(dialog.id);
+
+    useEffect(()=>{
+        setUsername(dialog.username);
+    }, [dialog.username]);
+
+    useEffect(()=>{
+        setId(dialog.id);
+    }, [dialog.id]);
+
     return (
-        <div className={DialogsCss.dialog + ' ' + DialogsCss.active}>
-            <NavLink to={'/dialogs/' + id}>{username}</NavLink>
+        <div className={'item'}>
+            <div className={'link'}>
+                <NavLink to={'/dialogs/' + id} activeClassName={'item-active'}>{username}</NavLink>
+            </div>
         </div>
     );
 }

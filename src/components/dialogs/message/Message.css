@@ -1,0 +1,18 @@
+.messageItem{
+}
+
+.myMessageItem{
+
+}
+
+.myMessageItem p{
+    text-align: right;
+}
+
+.otherMessageItem{
+
+}
+
+.otherMessageItem p{
+    text-align: left;
+}

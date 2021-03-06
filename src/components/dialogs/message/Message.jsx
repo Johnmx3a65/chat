@@ -1,14 +1,17 @@
-import React from "react";
-import DialogsCss from './../Dialogs.module.css'
+import React, {useState} from "react";
+import './Message.css';
 
 const Message = ({message}) => {
-    const {mine, text} = message;
+
+    const [mine, setMine] = useState(message.mine);
+    const [text, setText] = useState(message.text);
+
     return (
-        <div >
-            <div className={(mine)? DialogsCss.messageMine : DialogsCss.messageOther}>
-                <span>
+        <div className={'messageItem'}>
+            <div className={(mine)? 'myMessageItem' : 'otherMessageItem'}>
+                <p>
                     {text}
-                </span>
+                </p>
             </div>
         </div>
     )

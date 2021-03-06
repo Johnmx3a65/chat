@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import Message from "../message/Message";
-import DialogsCss from "../Dialogs.module.css";
+import "./Chat.css";
 
 const Chat = (props) => {
 
@@ -12,11 +12,9 @@ const Chat = (props) => {
     const messagesElements = messageList.map(message => <Message key={message.id} message={message}/>);
 
     useEffect(() => {
-        setMessageList(messages);
+        setMessageList(props.messages);
         setMessage('');
-    }, [username]);
-
-
+    }, [props.username, props.messages]);
 
 
     const handleOnChange = e => {
@@ -30,17 +28,18 @@ const Chat = (props) => {
     }
 
     return (
-        <div className={DialogsCss.messageList}>
+        <div className={'container'}>
 
-            <div className={DialogsCss.collocutor}>
+            <div className={'username'}>
                 {username}
             </div>
 
-            <div className={DialogsCss.messages}>
+            <div className={'messageList'}>
+                <div className={'fix'}/>
                 {messagesElements}
             </div>
 
-            <div className={DialogsCss.messageArea}>
+            <div className={'text_area'}>
                 <textarea value={message} name={'text'} placeholder={'Enter message...'}
                           onChange={e => handleOnChange(e)}/>
                 <button onClick={handleOnClick}>Send</button>
@@ -59,7 +58,6 @@ export const RouteChat = ({dialogs}) => {
         const initDialog = dialogs.find(d => d.id === Number.parseInt(id));
         setDialog(initDialog);
     }, [id])
-
 
     return <Chat messages={dialog.messages} username={dialog.username}/>;
 }

@@ -1,0 +1,49 @@
+.container{
+    max-height: 700px;
+    min-height: 700px;
+}
+
+.container:after{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: bottom;
+}
+
+.username{
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dbdbdb;
+
+}
+
+.messageList{
+    padding: 10px;
+    width: 100%;
+    height: 591px;
+    max-height: 591px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.fix{
+    flex: 1 1 auto;
+}
+
+.text_area{
+    display: flex;
+}
+
+.text_area textarea{
+    border: 1px solid #dbdbdb;
+    border-radius: 22px;
+    margin: 0 5px;
+    padding: 4px 9px;
+    line-height: 18px;
+    font-size: 14px;
+    resize: none;
+    flex-grow: 1;
+    outline: none;
+}

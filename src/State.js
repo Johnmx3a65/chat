@@ -8,7 +8,7 @@ export const appData = {
     dialogsData: {
 
         dialogs: [
-            {id: 1, username: 'Ivan', dialogId : 1, messages: [
+            {id: 1, username: 'Ivan', messages: [
                     {id: 1, mine : true, text: 'Hi'},
                     {id: 2, mine : true, text: 'How are you?'},
                     {id: 3, mine : false, text: 'Yo'},
@@ -26,7 +26,11 @@ export const appData = {
                     {id: 15, mine : false, text: 'Yo'}]},
 
 
-            {id: 2, username: 'Alex', dialogId : 2, messages: [
+            {id: 2, username: 'Alex', messages: [
+                    {id: 1, mine : true, text: 'Hi, Fred!'},
+                    {id: 2, mine : false, text: 'Hi, Alex'}]},
+
+            {id: 0, username: 'Lora', messages: [
                     {id: 1, mine : true, text: 'Hi, Fred!'},
                     {id: 2, mine : false, text: 'Hi, Alex'}]}
         ],

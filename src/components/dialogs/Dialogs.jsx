@@ -1,8 +1,8 @@
 import React from "react";
-import DialogsCss from './Dialogs.module.css'
+import './Dialogs.css'
 import DialogItem from "./dialogItem/DialogItem";
 import {Route} from "react-router-dom";
-import {RouteChat} from './messageList/RouteChat'
+import {RouteChat} from './chat/RouteChat'
 
 const Dialogs = ({dialogsData}) => {
 
@@ -11,11 +11,17 @@ const Dialogs = ({dialogsData}) => {
     const dialogsElements = dialogs.map(dialog => <DialogItem key={dialog.id} dialog={dialog}/>);
 
     return (
-        <div className={DialogsCss.dialogs}>
-            <div className={DialogsCss.dialogs_items}>{dialogsElements}</div>
-            <Route path={'/dialogs/:id'}>
-                <RouteChat dialogs={dialogs}/>
-            </Route>
+        <div className={'dialogs'}>
+
+            <div className={'dialogItems'}>
+                {dialogsElements}
+            </div>
+
+            <div className={'chat'}>
+                <Route path={'/dialogs/:id'}>
+                    <RouteChat dialogs={dialogs}/>
+                </Route>
+            </div>
         </div>
     );
 }
