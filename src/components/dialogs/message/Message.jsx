@@ -1,16 +1,19 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import './Message.css';
 
-const Message = ({message}) => {
+const Message = (props) => {
 
-    const [mine, setMine] = useState(message.mine);
-    const [text, setText] = useState(message.text);
+    const [message, setMessage] = useState(props.message);
+
+    useEffect(()=>{
+        setMessage(props.message);
+    }, [props.message]);
 
     return (
         <div className={'messageItem'}>
-            <div className={(mine)? 'myMessageItem' : 'otherMessageItem'}>
+            <div className={(message.mine)? 'myMessageItem' : 'otherMessageItem'}>
                 <p>
-                    {text}
+                    {message.text}
                 </p>
             </div>
         </div>

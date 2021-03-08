@@ -30,9 +30,9 @@ export const appData = {
                     {id: 1, mine : true, text: 'Hi, Fred!'},
                     {id: 2, mine : false, text: 'Hi, Alex'}]},
 
-            {id: 0, username: 'Lora', messages: [
-                    {id: 1, mine : true, text: 'Hi, Fred!'},
-                    {id: 2, mine : false, text: 'Hi, Alex'}]}
+            {id: 3, username: 'Lora', messages: [
+                    {id: 1, mine : true, text: 'Hi, Mark!'},
+                    {id: 2, mine : false, text: 'Hi, Lora!'}]},
         ],
     }
 

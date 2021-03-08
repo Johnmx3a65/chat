@@ -6,6 +6,7 @@
 
 .dialogs{
     width: 100%;
+    min-width: 700px;
     height: 100%;
     max-height: 700px;
     content: "";
@@ -16,7 +17,8 @@
 
 .dialogItems{
     float: left;
-    width: 20%;
+    width: 140px;
+    min-width: 120px;
     height: 100%;
     padding: 10px;
     border-right: 1px solid #dbdbdb;
@@ -25,7 +27,9 @@
 
 .chat{
     float: left;
-    width: 80%;
+    width: 1000px;
+    min-width: 484px;
+    max-height: 700px;
 }
 
 
