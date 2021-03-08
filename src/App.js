@@ -10,9 +10,9 @@ import {appData} from "./State";
 const App = (props) => {
     const [data, setData] = useState(appData);
 
-    /*useEffect(()=>{
+    useEffect(() => {
         setData(appData);
-    }, [appData]);*/
+    }, []);
 
     return (
         <BrowserRouter>

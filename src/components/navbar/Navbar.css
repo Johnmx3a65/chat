@@ -1,0 +1,18 @@
+.nav{
+    width: 15%;
+    height: 99%;
+    margin-top: 1%;
+    display: inline-block;
+    vertical-align: top;
+    background-color: darkseagreen;
+}
+
+.nav-item a{
+    margin: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-item a.active{
+    color: gold;
+}

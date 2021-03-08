@@ -16,7 +16,7 @@ const DialogItem = ({dialog}) => {
     }, [dialog.id]);
 
     return (
-        <div className={'item'}>
+        <div className={'dialog-item'}>
             <div className={'link'}>
                 <NavLink to={'/dialogs/' + id} activeClassName={'item-active'}>{username}</NavLink>
             </div>

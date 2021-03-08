@@ -6,30 +6,23 @@
 
 .dialogs{
     width: 100%;
-    min-width: 700px;
     height: 100%;
-    max-height: 700px;
-    content: "";
-    display: table;
-    clear: both;
     border: 1px solid #dbdbdb;
 }
 
 .dialogItems{
-    float: left;
-    width: 140px;
-    min-width: 120px;
+    display: inline-block;
+    vertical-align: top;
+    width: 15%;
     height: 100%;
-    padding: 10px;
-    border-right: 1px solid #dbdbdb;
-
 }
 
 .chat{
-    float: left;
-    width: 1000px;
-    min-width: 484px;
-    max-height: 700px;
+    border-left: 1px solid #dbdbdb;
+    display: inline-block;
+    vertical-align: top;
+    width: 85%;
+    height: 100%;
 }
 
 
