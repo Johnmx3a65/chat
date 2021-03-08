@@ -13,7 +13,9 @@ const Message = (props) => {
         <div className={'messageItem'}>
             <div className={(message.mine)? 'myMessageItem' : 'otherMessageItem'}>
                 <p>
-                    {message.text}
+                    <span>
+                        {message.text}
+                    </span>
                 </p>
             </div>
         </div>

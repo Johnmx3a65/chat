@@ -9,10 +9,22 @@
     text-align: right;
 }
 
+.myMessageItem p span{
+    background-color: #23aef1;
+    border-radius: 10px;
+    padding: 3px;
+}
+
 .otherMessageItem{
 
 }
 
 .otherMessageItem p{
     text-align: left;
+}
+
+.otherMessageItem p span{
+    background-color: #23aef1;
+    border-radius: 10px;
+    padding: 3px;
 }
