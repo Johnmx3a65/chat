@@ -1,19 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import PropTypes from 'prop-types'
 import './Post.css';
 
-const Post = (props) => {
-
-    const [likes, setLikes] = useState(props.likes);
-    const [message, setMessage] = useState(props.message);
-
-    useEffect(()=>{
-        setLikes(props.likes);
-        setMessage(props.message);
-    }, [props]);
+const Post = ({likes, message, id, dispatch}) => {
 
     const handleOnClick = () => {
-        setLikes((prev) => prev + 1);
+        dispatch({type : 'UPDATE-LIKES-COUNT', id : id});
     }
 
     return (

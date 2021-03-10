@@ -4,7 +4,7 @@ import './MyPosts.css'
 import Post from "./post/Post";
 
 const MyPosts = ({posts, newPostText, dispatch}) => {
-    const postsElements = posts.map(post => <Post key={post.id} {...post}/>);
+    const postsElements = posts.map(post => <Post key={post.id} {...post} dispatch={dispatch}/>);
 
     const handleOnChange = (e => {
         dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: e.target.value});
@@ -17,8 +17,8 @@ const MyPosts = ({posts, newPostText, dispatch}) => {
                 case 'add_post' :
                     dispatch({type: 'ADD-POST'});
                     break;
-                case 'delete_post' :
-                    dispatch({type: 'DELETE-POST'});
+                case 'remove_text' :
+                    dispatch({type: 'DELETE-TEXTAREA-TEXT'});
                     break;
                 default :
                     dispatch({type: 'error'});
@@ -35,7 +35,7 @@ const MyPosts = ({posts, newPostText, dispatch}) => {
                 <textarea value={newPostText} onChange={handleOnChange} />
                 <br/>
                 <button name={'add_post'} onClick={handleOnClick}>Add post</button>
-                <button name={'remove_text'}>Remove</button>
+                <button name={'remove_text'} onClick={handleOnClick}>Remove</button>
             </div>
             <div className={'posts'}>{postsElements}</div>
         </div>
