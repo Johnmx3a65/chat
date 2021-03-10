@@ -3,11 +3,11 @@ import MyPosts from "./my_posts/MyPosts";
 import ProfileInfo from "./profile_info/ProfileInfo";
 import './Profile.css'
 
-const Profile = ({posts}) => {
+const Profile = ({profilePage, dispatch}) => {
     return (
         <div className={'profile-container'}>
             <ProfileInfo/>
-            <MyPosts posts={posts}/>
+            <MyPosts posts={profilePage.posts} newPostText={profilePage.newPostText} dispatch={dispatch}/>
         </div>
     );
 }
