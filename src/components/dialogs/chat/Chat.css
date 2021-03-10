@@ -1,6 +1,6 @@
 .container{
-    max-height: 700px;
-    min-height: 700px;
+    height: 100%;
+    min-height: 530px;
 }
 
 .container:after{
@@ -12,15 +12,15 @@
 
 .username{
     text-align: center;
-    padding-bottom: 20px;
+    height: 6%;
     border-bottom: 1px solid #dbdbdb;
 }
 
 .messageList{
     padding: 10px;
     width: 100%;
-    height: 591px;
-    max-height: 591px;
+    height: 87%;
+    min-height: 456px;
     overflow-x: hidden;
     overflow-y: auto;
     display: flex;
@@ -32,7 +32,10 @@
 }
 
 .text_area{
+    height: 7%;
+    min-height: 46px;
     display: flex;
+    padding-bottom: 2%;
 }
 
 .text_area textarea{
@@ -40,7 +43,7 @@
     border-radius: 22px;
     margin: 0 5px;
     padding: 4px 9px;
-    line-height: 18px;
+    line-height: 17px;
     font-size: 14px;
     resize: none;
     flex-grow: 1;

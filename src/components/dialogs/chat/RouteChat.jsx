@@ -5,32 +5,30 @@ import "./Chat.css";
 
 const Chat = (props) => {
 
+    const [username, setUsername] = useState(props.username);
     const [message, setMessage] = useState('');
     const [messageList, setMessageList] = useState(props.messages);
-
     const messagesElements = messageList.map(message => <Message key={message.id} message={message}/>);
 
-    useEffect(() => {
+    useEffect(()=>{
+        setUsername(props.username);
         setMessageList(props.messages);
-        setMessage('');
     }, [props.username, props.messages]);
-
 
     const handleOnChange = e => {
         setMessage(e.target.value);
-    }
+    };
 
     const handleOnClick = () => {
         const newMessage = {id: new Date().getTime().toString(), mine: true, text: message};
         setMessageList(prev => [...prev, newMessage]);
         setMessage('');
-    }
+    };
 
     return (
         <div className={'container'}>
-
             <div className={'username'}>
-                {props.username}
+                {username}
             </div>
 
             <div className={'messageList'}>
@@ -54,15 +52,10 @@ export const RouteChat = (props) => {
     const [dialog, setDialog] = useState(dialogs.find(d => d.id === Number.parseInt(id)));
 
     useEffect(() => {
-        const initDialog = dialogs.find(d => d.id === Number.parseInt(id));
-        setDialog(initDialog);
-    }, [id]);
-
-    useEffect(()=>{
         setDialogs(props.dialogs);
         const initDialog = props.dialogs.find(d => d.id === Number.parseInt(id));
         setDialog(initDialog);
-    }, [props.dialogs]);
+    }, [id, props.dialogs]);
 
-    return <Chat messages={dialog.messages} username={dialog.username}/>;
+    return <Chat {...dialog}/>;
 }

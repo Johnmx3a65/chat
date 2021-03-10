@@ -2,11 +2,21 @@
   margin-left: 5%;
   margin-right: 5%;
   width: 90%;
-  height: 90%;
+  min-width: 690px;
+  height: 95vh;
+}
+
+.app-wrapper button{
+  background-color: #23aef1;
+  outline: none;
+  display: inline-block;
+  vertical-align: top;
+  margin: 2px;
 }
 
 .app-wrapper-content {
   width: 84%;
+  min-width: 588px;
   margin-left: 1%;
   margin-top: 1%;
   height: 99%;

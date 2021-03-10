@@ -1,8 +1,8 @@
 export const appData = {
 
     posts: [
-        {id: 1, message: "It's amazing!"},
-        {id: 2, message: "You're so cool!"}
+        {id: 1, message: "It's amazing!", likes: 12},
+        {id: 2, message: "You're so cool!", likes: '7'},
     ],
 
     dialogsData: {
@@ -25,15 +25,13 @@ export const appData = {
                     {id: 14, mine : true, text: 'How are you?'},
                     {id: 15, mine : false, text: 'Yo'}]},
 
-
             {id: 2, username: 'Alex', messages: [
                     {id: 1, mine : true, text: 'Hi, Fred!'},
                     {id: 2, mine : false, text: 'Hi, Alex'}]},
 
             {id: 3, username: 'Lora', messages: [
-                    {id: 1, mine : true, text: 'Hi, Mark!'},
+                    {id: 1, mine : true, text: 'Hi, Marko!'},
                     {id: 2, mine : false, text: 'Hi, Lora!'}]},
         ],
     }
-
 }
