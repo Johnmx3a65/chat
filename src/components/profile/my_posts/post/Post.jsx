@@ -21,8 +21,10 @@ const Post = ({likes, message, id, updateLikesCount}) => {
 }
 
 Post.propTypes = {
+    id: PropTypes.number.isRequired,
     likes : PropTypes.number.isRequired,
-    message : PropTypes.string.isRequired
+    message : PropTypes.string.isRequired,
+    updateLikesCount : PropTypes.func.isRequired
 }
 
 export default Post;

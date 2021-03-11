@@ -30,7 +30,11 @@ const MyPosts = ({posts, newPostText, updateText, onClick, updateLikesCount}) =>
 };
 
 MyPosts.propTypes = {
-    posts: PropTypes.array.isRequired
+    posts: PropTypes.array.isRequired,
+    newPostText: PropTypes.string.isRequired,
+    updateText: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired,
+    updateLikesCount: PropTypes.func.isRequired
 }
 
 export default MyPosts;
