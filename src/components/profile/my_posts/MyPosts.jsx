@@ -4,6 +4,7 @@ import './MyPosts.css'
 import Post from "./post/Post";
 
 const MyPosts = ({posts, newPostText, dispatch, updateText, onClick}) => {
+
     const postsElements = posts.map(post => <Post key={post.id} {...post} dispatch={dispatch}/>);
 
     const handleOnChange = (e => {

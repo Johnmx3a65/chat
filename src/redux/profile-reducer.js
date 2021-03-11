@@ -9,6 +9,7 @@ const initialState = {
 };
 
 const profilePage = (state = initialState, action) => {
+    const stateCopy = {...state};
     switch (action.type) {
         case ADD_POST :
             const newPost = {
@@ -16,18 +17,20 @@ const profilePage = (state = initialState, action) => {
                 message: state.newPostText,
                 likes: 0
             }
-            state.posts.push(newPost);
-            state.newPostText = '';
-            return state;
+            stateCopy.posts = [...state.posts];
+            stateCopy.posts.push(newPost);
+            stateCopy.newPostText = '';
+            return stateCopy;
         case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
+            stateCopy.newPostText = action.newText;
+            return stateCopy;
         case DELETE_TEXTAREA_TEXT:
-            state.newPostText = '';
-            return state;
+            stateCopy.newPostText = '';
+            return stateCopy;
         case UPDATE_LIKES_COUNT:
-            state.posts.find(p => p.id === action.id).likes += 1;
-            return state;
+            stateCopy.posts = [...state.posts];
+            stateCopy.posts.find(p => p.id === action.id).likes += 1;
+            return stateCopy;
         default:
             return state;
     }

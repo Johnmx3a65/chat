@@ -5,4 +5,6 @@ let reducers = combineReducers({profilePage});
 
 let store =  createStore(reducers);
 
+window.store = store;
+
 export default store;
