@@ -10,7 +10,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        dispatch,
         updateText: (text) => dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text}),
         onClick: (text, buttonName) => {
             if (text) {
@@ -27,7 +26,8 @@ const mapDispatchToProps = (dispatch) => {
             } else {
                 //showModal
             }
-        }
+        },
+        updateLikesCount: (id) => dispatch({type : 'UPDATE-LIKES-COUNT', id : id})
     }
 }
 

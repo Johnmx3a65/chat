@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from 'prop-types'
 import './Post.css';
 
-const Post = ({likes, message, id, dispatch}) => {
+const Post = ({likes, message, id, updateLikesCount}) => {
 
     const handleOnClick = () => {
-        dispatch({type : 'UPDATE-LIKES-COUNT', id : id});
+        updateLikesCount(id);
     }
 
     return (

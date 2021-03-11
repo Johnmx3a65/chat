@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import './MyPosts.css'
 import Post from "./post/Post";
 
-const MyPosts = ({posts, newPostText, dispatch, updateText, onClick}) => {
+const MyPosts = ({posts, newPostText, updateText, onClick, updateLikesCount}) => {
 
-    const postsElements = posts.map(post => <Post key={post.id} {...post} dispatch={dispatch}/>);
+    const postsElements = posts.map(post => <Post key={post.id} {...post} updateLikesCount={updateLikesCount}/>);
 
     const handleOnChange = (e => {
         updateText(e.target.value);
