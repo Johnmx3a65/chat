@@ -11,7 +11,7 @@ const MyPosts = ({posts, newPostText, dispatch, updateText, onClick}) => {
     });
 
     const handleOnClick = (e) => {
-        onClick(newPostText, e);
+        onClick(newPostText, e.target.name);
     }
 
     return (

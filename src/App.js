@@ -7,12 +7,13 @@ import Profile from "./components/profile/Profile";
 import Dialogs from "./components/dialogs/Dialogs";
 import {appData} from "./State";
 
-const App = ({state, dispatch}) => {
+const App = () => {
     const [data, setData] = useState(appData);
 
     useEffect(() => {
         setData(appData);
     }, []);
+
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -23,7 +24,7 @@ const App = ({state, dispatch}) => {
                         <Dialogs dialogsData={data.dialogsData}/>
                     </Route>
                     <Route path={'/profile'}>
-                        <Profile profilePage={state.profileReducer} dispatch={dispatch}/>
+                        <Profile/>
                     </Route>
                 </div>
             </div>

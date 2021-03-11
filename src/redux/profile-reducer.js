@@ -8,7 +8,7 @@ const initialState = {
     newPostText: "",
 };
 
-const profileReducer = (state = initialState, action) => {
+const profilePage = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST :
             const newPost = {
@@ -33,4 +33,4 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export default profileReducer;
+export default profilePage;
