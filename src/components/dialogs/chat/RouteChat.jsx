@@ -1,28 +1,18 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import {useParams} from "react-router-dom";
-import Message from "../message/Message";
+import Message from "./message/Message";
 import "./Chat.css";
 
-const Chat = (props) => {
+const Chat = ({id, username, messages, newMessageText, updateText, addMessage}) => {
 
-    const [username, setUsername] = useState(props.username);
-    const [message, setMessage] = useState('');
-    const [messageList, setMessageList] = useState(props.messages);
-    const messagesElements = messageList.map(message => <Message key={message.id} message={message}/>);
-
-    useEffect(()=>{
-        setUsername(props.username);
-        setMessageList(props.messages);
-    }, [props.username, props.messages]);
+    const messagesElements = messages.map(message => <Message key={message.id} message={message}/>);
 
     const handleOnChange = e => {
-        setMessage(e.target.value);
+        updateText(e.target.value);
     };
 
     const handleOnClick = () => {
-        const newMessage = {id: new Date().getTime().toString(), mine: true, text: message};
-        setMessageList(prev => [...prev, newMessage]);
-        setMessage('');
+        addMessage(id)
     };
 
     return (
@@ -37,7 +27,7 @@ const Chat = (props) => {
             </div>
 
             <div className={'text_area'}>
-                <textarea value={message} name={'text'} placeholder={'Enter message...'}
+                <textarea value={newMessageText} name={'text'} placeholder={'Enter message...'}
                           onChange={e => handleOnChange(e)}/>
                 <button onClick={handleOnClick}>Send</button>
             </div>
@@ -45,17 +35,11 @@ const Chat = (props) => {
     );
 }
 
-export const RouteChat = (props) => {
+export const RouteChat = ({dialogs, newMessageText, updateText, addMessage}) => {
 
     const {id} = useParams();
-    const [dialogs, setDialogs] = useState(props.dialogs);
-    const [dialog, setDialog] = useState(dialogs.find(d => d.id === Number.parseInt(id)));
+    const dialog = dialogs.find(d => d.id === Number.parseInt(id));
 
-    useEffect(() => {
-        setDialogs(props.dialogs);
-        const initDialog = props.dialogs.find(d => d.id === Number.parseInt(id));
-        setDialog(initDialog);
-    }, [id, props.dialogs]);
 
-    return <Chat {...dialog}/>;
+    return <Chat {...dialog} newMessageText={newMessageText} updateText={updateText} addMessage={addMessage}/>;
 }

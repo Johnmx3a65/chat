@@ -1,29 +1,23 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import './Dialogs.css'
 import DialogItem from "./dialogItem/DialogItem";
 import {Route} from "react-router-dom";
-import {RouteChat} from './chat/RouteChat'
+import ChatContainer from "./chat/ChatContainer";
 
 const Dialogs = ({dialogsData}) => {
 
-    const [dialogs, setDialogs] = useState(dialogsData.dialogs);
-
-    useEffect(()=>{
-        setDialogs(dialogsData.dialogs);
-    }, [dialogsData.dialogs]);
-
-    const dialogsElements = dialogs.map(dialog => <DialogItem key={dialog.id} dialog={dialog}/>);
+    const dialogItemsElements = dialogsData.dialogs.map(dialog => <DialogItem key={dialog.id} {...dialog}/>);
 
     return (
         <div className={'dialogs'}>
 
             <div className={'dialogItems'}>
-                {dialogsElements}
+                {dialogItemsElements}
             </div>
 
             <div className={'chat'}>
                 <Route path={'/dialogs/:id'}>
-                    <RouteChat dialogs={dialogs}/>
+                    <ChatContainer/>
                 </Route>
             </div>
         </div>
