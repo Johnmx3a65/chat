@@ -3,29 +3,15 @@ import PropTypes from 'prop-types';
 import './MyPosts.css'
 import Post from "./post/Post";
 
-const MyPosts = ({posts, newPostText, dispatch}) => {
+const MyPosts = ({posts, newPostText, dispatch, updateText, onClick}) => {
     const postsElements = posts.map(post => <Post key={post.id} {...post} dispatch={dispatch}/>);
 
     const handleOnChange = (e => {
-        dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: e.target.value});
+        updateText(e.target.value);
     });
 
-
     const handleOnClick = (e) => {
-        if (newPostText) {
-            switch (e.target.name) {
-                case 'add_post' :
-                    dispatch({type: 'ADD-POST'});
-                    break;
-                case 'remove_text' :
-                    dispatch({type: 'DELETE-TEXTAREA-TEXT'});
-                    break;
-                default :
-                    dispatch({type: 'error'});
-            }
-        } else {
-            //showModal
-        }
+        onClick(newPostText, e);
     }
 
     return (
