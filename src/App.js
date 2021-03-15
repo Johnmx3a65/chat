@@ -1,18 +1,14 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import {Route} from "react-router-dom";
 import './App.css'
 import Header from "./components/header/Header";
 import Navbar from "./components/navbar/Navbar";
 import Profile from "./components/profile/Profile";
-import Dialogs from "./components/dialogs/Dialogs";
-import {appData} from "./State";
+import DialogsContainer from "./components/dialogs/DialogsContainer";
+import UsersContainer from "./components/users/UsersContainer";
+
 
 const App = () => {
-    const [data, setData] = useState(appData);
-
-    useEffect(() => {
-        setData(appData);
-    }, []);
 
     return (
             <div className='app-wrapper'>
@@ -20,10 +16,13 @@ const App = () => {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Route path={'/dialogs'}>
-                        <Dialogs dialogsData={data.dialogsData}/>
+                        <DialogsContainer/>
                     </Route>
                     <Route path={'/profile'}>
                         <Profile/>
+                    </Route>
+                    <Route path={'/users'}>
+                        <UsersContainer/>
                     </Route>
                 </div>
             </div>

@@ -8,7 +8,7 @@ const initialState = {
     newPostText: "",
 };
 
-const profilePage = (state = initialState, action) => {
+const profileReducer = (state = initialState, action) => {
     const stateCopy = {...state};
     switch (action.type) {
         case ADD_POST :
@@ -36,4 +36,4 @@ const profilePage = (state = initialState, action) => {
     }
 }
 
-export default profilePage;
+export default profileReducer;

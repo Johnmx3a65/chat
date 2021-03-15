@@ -3,7 +3,6 @@ import './DialogItem.css'
 import {NavLink} from "react-router-dom";
 
 const DialogItem = ({username, id}) => {
-
     return (
         <div className={'dialog-item'}>
             <div className={'link'}>

@@ -31,7 +31,7 @@ const initialState = {
     newMessageText: ''
 }
 
-const dialogsPage = (state = initialState, action) => {
+const dialogsReducer = (state = initialState, action) => {
     const stateCopy = {...state};
 
     switch (action.type) {
@@ -43,7 +43,7 @@ const dialogsPage = (state = initialState, action) => {
             }
             stateCopy.dialogs.find((d) => d.id === action.dialogId).messages
                 = [...state.dialogs.find(d => d.id === action.dialogId).messages];
-            stateCopy.dialogs.find((d) => d.id === action.dialogId).messages.push(newMessage);
+            stateCopy.dialogs.find((d) => d.id === action.dialogId).messages = [...state.dialogs.find(d => d.id === action.dialogId).messages, newMessage];
             stateCopy.newMessageText = '';
             return stateCopy;
         }
@@ -57,4 +57,7 @@ const dialogsPage = (state = initialState, action) => {
     }
 }
 
-export default dialogsPage;
+export const ADD_MESSAGE_CREATOR = (id) => ({type: ADD_MESSAGE, dialogId: id});
+export const UPDATE_NEW_MESSAGE_TEXT_CREATOR = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text});
+
+export default dialogsReducer;

@@ -2,11 +2,11 @@ import React from "react";
 import './Dialogs.css'
 import DialogItem from "./dialogItem/DialogItem";
 import {Route} from "react-router-dom";
-import ChatContainer from "./chat/ChatContainer";
+import {RouteChat} from "./chat/RouteChat";
 
-const Dialogs = ({dialogsData}) => {
+const Dialogs = ({dialogs, newMessageText, addMessage, updateText}) => {
 
-    const dialogItemsElements = dialogsData.dialogs.map(dialog => <DialogItem key={dialog.id} {...dialog}/>);
+    const dialogItemsElements = dialogs.map(d => <DialogItem key={d.id} id={d.id} username={d.username}/>);
 
     return (
         <div className={'dialogs'}>
@@ -17,7 +17,7 @@ const Dialogs = ({dialogsData}) => {
 
             <div className={'chat'}>
                 <Route path={'/dialogs/:id'}>
-                    <ChatContainer/>
+                    <RouteChat newMessageText={newMessageText} dialogs={dialogs} addMessage={addMessage} updateText={updateText}/>
                 </Route>
             </div>
         </div>

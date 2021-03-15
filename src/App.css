@@ -23,9 +23,7 @@
   display: inline-block;
   vertical-align: top;
   background-color: white;
-}
-
-.app-wrapper-content img{
-  width: 658px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
