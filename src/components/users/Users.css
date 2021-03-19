@@ -5,6 +5,10 @@
     margin: 5px 5px 0 5px;
 }
 
+.active-page{
+    font-weight: bold;
+}
+
 .users{
     height: 100%;
     max-height: 633px;
