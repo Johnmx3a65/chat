@@ -3,11 +3,11 @@ import ProfileInfo from "./profile_info/ProfileInfo";
 import './Profile.css'
 import MyPostsContainer from "./my_posts/MyPostsContainer";
 
-const Profile = ({profilePage, dispatch}) => {
+const Profile = (props) => {
     return (
         <div className={'profile-container'}>
-            <ProfileInfo/>
-            <MyPostsContainer posts={profilePage.posts} newPostText={profilePage.newPostText} dispatch={dispatch}/>
+            <ProfileInfo bio={props.bio} avatar={props.avatar} fullName={props.fullName} isLoading={props.isLoading}/>
+            <MyPostsContainer/>
         </div>
     );
 }

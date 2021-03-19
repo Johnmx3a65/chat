@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import './MyPosts.css'
 import Post from "./post/Post";
 
-const MyPosts = ({posts, newPostText, dispatch, updateText, onClick}) => {
-    const postsElements = posts.map(post => <Post key={post.id} {...post} dispatch={dispatch}/>);
+const MyPosts = ({posts, newPostText, updateText, onClick, updateLikesCount}) => {
+
+    const postsElements = posts.map(post => <Post key={post.id} {...post} updateLikesCount={updateLikesCount}/>);
 
     const handleOnChange = (e => {
         updateText(e.target.value);
     });
 
     const handleOnClick = (e) => {
-        onClick(newPostText, e);
+        onClick(newPostText, e.target.name);
     }
 
     return (
@@ -29,7 +30,11 @@ const MyPosts = ({posts, newPostText, dispatch, updateText, onClick}) => {
 };
 
 MyPosts.propTypes = {
-    posts: PropTypes.array.isRequired
+    posts: PropTypes.array.isRequired,
+    newPostText: PropTypes.string.isRequired,
+    updateText: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired,
+    updateLikesCount: PropTypes.func.isRequired
 }
 
 export default MyPosts;
